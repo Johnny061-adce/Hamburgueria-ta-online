@@ -41,13 +41,56 @@
   <footer class="rodape-fixo"><div class="rodape-inner"><div class="total">Total: R$ <span id="total">0,00</span></div><button id="btnEnviar" class="enviar">Fazer pedido</button></div></footer>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const SUPABASE_URL = "COLE_AQUI_SUA_URL_SUPABASE";
-    const SUPABASE_KEY = "COLE_AQUI_SUA_PUBLISHABLE_KEY";
-    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    // ==========================================================
+    // CONFIGURAÇÃO DO SUPABASE
+    // Cole abaixo a URL e a Publishable Key do MESMO projeto
+    // em que você executou o SQL do cardápio.
+    // ==========================================================
+    const SUPABASE_URL = "https://iqvqdazmxoydvfllfpwp.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_R-sG8jbpSpb9SSsPkfDDgA_5y3JcjZ2";
+
+    function configuracaoSupabaseValida(){
+      const urlValida =
+        typeof SUPABASE_URL === "string" &&
+        /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(SUPABASE_URL.trim());
+
+      const chaveValida =
+        typeof SUPABASE_KEY === "string" &&
+        SUPABASE_KEY.trim().length > 20 &&
+        !SUPABASE_KEY.includes("COLE_AQUI");
+
+      return urlValida && chaveValida;
+    }
+
+    let sb = null;
+
+    if(configuracaoSupabaseValida()){
+      sb = window.supabase.createClient(
+        SUPABASE_URL.trim().replace(/\/$/, ""),
+        SUPABASE_KEY.trim()
+      );
+    }
     let categorias=[],produtos=[],carrinho=new Map(),taxaEntrega=0,lojaAberta=true,categoriaSelecionada="Todas";
     const $=id=>document.getElementById(id),moeda=v=>Number(v||0).toFixed(2).replace(".",","),esc=t=>String(t??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
     function mostrarMensagem(texto,tipo="ok"){const el=$("mensagem");el.className="mensagem "+tipo;el.textContent=texto;el.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>el.className="mensagem",7000)}
-    async function carregar(){try{const [{data:cfg,error:e1},{data:cats,error:e2},{data:prods,error:e3}]=await Promise.all([sb.from("configuracoes").select("*").eq("id",1).maybeSingle(),sb.from("categorias").select("*").eq("ativo",true).order("ordem"),sb.from("produtos").select("*, categorias(nome,coluna,ordem)").eq("ativo",true).order("ordem")]);if(e1||e2||e3)throw(e1||e2||e3);taxaEntrega=Number(cfg?.taxa_entrega||0);lojaAberta=cfg?.loja_aberta!==false;categorias=cats||[];produtos=prods||[];$("statusLoja").textContent=lojaAberta?"Aberto para pedidos":"Fechado no momento";$("statusLoja").className="status "+(lojaAberta?"aberta":"fechada");$("btnEnviar").disabled=!lojaAberta;renderFiltros();renderCardapio();atualizarTotal()}catch(e){console.error(e);$("cardapio").innerHTML='<div class="vazio">Não foi possível carregar o cardápio. Confira a URL, a chave e o SQL do Supabase.</div>';mostrarMensagem("Erro ao carregar o cardápio.","erro")}}
+    async function carregar(){
+      if(!sb){
+        $("statusLoja").textContent = "Configuração pendente";
+        $("statusLoja").className = "status fechada";
+        $("btnEnviar").disabled = true;
+        $("cardapio").innerHTML =
+          '<div class="vazio">' +
+          '<strong>Conexão com o Supabase não configurada.</strong><br><br>' +
+          'Abra o index.html e preencha SUPABASE_URL e SUPABASE_KEY.' +
+          '</div>';
+        mostrarMensagem(
+          "Preencha a URL e a Publishable Key do Supabase dentro do index.html.",
+          "erro"
+        );
+        return;
+      }
+
+      try{const [{data:cfg,error:e1},{data:cats,error:e2},{data:prods,error:e3}]=await Promise.all([sb.from("configuracoes").select("*").eq("id",1).maybeSingle(),sb.from("categorias").select("*").eq("ativo",true).order("ordem"),sb.from("produtos").select("*, categorias(nome,coluna,ordem)").eq("ativo",true).order("ordem")]);if(e1||e2||e3)throw(e1||e2||e3);taxaEntrega=Number(cfg?.taxa_entrega||0);lojaAberta=cfg?.loja_aberta!==false;categorias=cats||[];produtos=prods||[];$("statusLoja").textContent=lojaAberta?"Aberto para pedidos":"Fechado no momento";$("statusLoja").className="status "+(lojaAberta?"aberta":"fechada");$("btnEnviar").disabled=!lojaAberta;renderFiltros();renderCardapio();atualizarTotal()}catch(e){console.error(e);$("cardapio").innerHTML='<div class="vazio">Não foi possível carregar o cardápio. Confira a URL, a chave e o SQL do Supabase.</div>';mostrarMensagem("Erro ao carregar o cardápio.","erro")}}
     function renderFiltros(){const nomes=["Todas",...categorias.map(c=>c.nome)];$("filtros").innerHTML=nomes.map(nome=>`<button class="cat-btn ${nome===categoriaSelecionada?"ativa":""}" data-cat="${esc(nome)}">${esc(nome)}</button>`).join("")}
     function renderCardapio(){const termo=$("busca").value.trim().toLowerCase();const filtrados=produtos.filter(p=>{const cat=p.categorias?.nome||"";return(categoriaSelecionada==="Todas"||cat===categoriaSelecionada)&&(!termo||`${p.nome} ${p.descricao} ${cat}`.toLowerCase().includes(termo))});const grupos=new Map();filtrados.forEach(p=>{const cat=p.categorias?.nome||"Outros";if(!grupos.has(cat))grupos.set(cat,[]);grupos.get(cat).push(p)});if(!filtrados.length){$("cardapio").innerHTML='<div class="vazio">Nenhum item encontrado.</div>';return}$("cardapio").innerHTML=categorias.filter(c=>grupos.has(c.nome)).map(c=>`<section class="categoria"><h2>${esc(c.nome)}</h2>${grupos.get(c.nome).map(produtoHtml).join("")}</section>`).join("")}
     function produtoHtml(p){const item=carrinho.get(p.id)||{quantidade:0,observacao:""};const indisponivel=p.esgotado||(p.controlar_estoque&&Number(p.estoque)<=0);return `<article class="produto ${indisponivel?"esgotado":""}"><div class="linha-produto"><div><div class="nome">${esc(p.nome)}</div><div class="descricao">${esc(p.descricao||"")}</div>${indisponivel?'<div class="tag-esgotado">ESGOTADO</div>':""}</div><div class="preco">R$ ${moeda(p.preco)}</div></div><div class="produto-baixo"><input class="obs-item" data-obs="${p.id}" ${indisponivel?"disabled":""} placeholder="Observação deste item" value="${esc(item.observacao)}"><div class="qtd"><button type="button" data-qtd="${p.id}" data-delta="-1" ${indisponivel?"disabled":""}>−</button><span id="qtd-${p.id}">${item.quantidade}</span><button type="button" data-qtd="${p.id}" data-delta="1" ${indisponivel?"disabled":""}>+</button></div></div></article>`}
@@ -55,7 +98,12 @@
     function atualizarTotal(){let subtotal=0;carrinho.forEach((item,id)=>{const p=produtos.find(x=>Number(x.id)===Number(id));if(p)subtotal+=Number(p.preco)*Number(item.quantidade)});const taxa=$("tipoPedido").value==="delivery"?taxaEntrega:0;$("total").textContent=moeda(subtotal+taxa)}
     function ajustarTipo(){const tipo=$("tipoPedido").value;$("campoMesa").style.display=tipo==="mesa"?"flex":"none";$("campoEndereco").style.display=tipo==="delivery"?"flex":"none";atualizarTotal()}
     function aplicarMesaDaUrl(){const mesaUrl=new URLSearchParams(location.search).get("mesa");if(!mesaUrl)return;$("tipoPedido").value="mesa";$("mesa").value=mesaUrl;$("mesa").readOnly=true;$("mesa").classList.add("mesa-bloqueada");ajustarTipo()}
-    async function enviarPedido(){if(!lojaAberta){mostrarMensagem("A loja está fechada no momento.","erro");return}const itens=[];carrinho.forEach((item,id)=>{if(item.quantidade>0)itens.push({produto_id:Number(id),quantidade:item.quantidade,observacao:item.observacao||""})});if(!itens.length){mostrarMensagem("Selecione pelo menos um item.","erro");return}const tipo=$("tipoPedido").value;if(tipo==="mesa"&&!$("mesa").value.trim()){mostrarMensagem("Informe o número da mesa.","erro");return}if(tipo==="delivery"&&!$("endereco").value.trim()){mostrarMensagem("Informe o endereço de entrega.","erro");return}const btn=$("btnEnviar");btn.disabled=true;btn.textContent="Enviando...";try{const {data,error}=await sb.rpc("criar_pedido",{p_cliente:$("cliente").value.trim(),p_telefone:$("telefone").value.trim(),p_tipo_pedido:tipo,p_mesa:$("mesa").value.trim(),p_endereco:$("endereco").value.trim(),p_observacao:$("observacao").value.trim(),p_forma_pagamento:$("formaPagamento").value,p_itens:itens});if(error)throw error;const retorno=Array.isArray(data)?data[0]:data;mostrarMensagem(`Pedido #${retorno?.numero_pedido||""} enviado com sucesso! Total: R$ ${moeda(retorno?.total_pedido||0)}`);carrinho.clear();renderCardapio();atualizarTotal();$("cliente").value="";$("telefone").value="";$("observacao").value="";if(!$("mesa").readOnly)$("mesa").value="";if(tipo!=="mesa")$("endereco").value=""}catch(e){console.error(e);mostrarMensagem(e.message||"Não foi possível enviar o pedido.","erro")}finally{btn.disabled=!lojaAberta;btn.textContent="Fazer pedido"}}
+    async function enviarPedido(){
+      if(!sb){
+        mostrarMensagem("Configure primeiro a URL e a Publishable Key do Supabase.", "erro");
+        return;
+      }
+      if(!lojaAberta){mostrarMensagem("A loja está fechada no momento.","erro");return}const itens=[];carrinho.forEach((item,id)=>{if(item.quantidade>0)itens.push({produto_id:Number(id),quantidade:item.quantidade,observacao:item.observacao||""})});if(!itens.length){mostrarMensagem("Selecione pelo menos um item.","erro");return}const tipo=$("tipoPedido").value;if(tipo==="mesa"&&!$("mesa").value.trim()){mostrarMensagem("Informe o número da mesa.","erro");return}if(tipo==="delivery"&&!$("endereco").value.trim()){mostrarMensagem("Informe o endereço de entrega.","erro");return}const btn=$("btnEnviar");btn.disabled=true;btn.textContent="Enviando...";try{const {data,error}=await sb.rpc("criar_pedido",{p_cliente:$("cliente").value.trim(),p_telefone:$("telefone").value.trim(),p_tipo_pedido:tipo,p_mesa:$("mesa").value.trim(),p_endereco:$("endereco").value.trim(),p_observacao:$("observacao").value.trim(),p_forma_pagamento:$("formaPagamento").value,p_itens:itens});if(error)throw error;const retorno=Array.isArray(data)?data[0]:data;mostrarMensagem(`Pedido #${retorno?.numero_pedido||""} enviado com sucesso! Total: R$ ${moeda(retorno?.total_pedido||0)}`);carrinho.clear();renderCardapio();atualizarTotal();$("cliente").value="";$("telefone").value="";$("observacao").value="";if(!$("mesa").readOnly)$("mesa").value="";if(tipo!=="mesa")$("endereco").value=""}catch(e){console.error(e);mostrarMensagem(e.message||"Não foi possível enviar o pedido.","erro")}finally{btn.disabled=!lojaAberta;btn.textContent="Fazer pedido"}}
     $("filtros").addEventListener("click",e=>{const btn=e.target.closest("[data-cat]");if(!btn)return;categoriaSelecionada=btn.dataset.cat;renderFiltros();renderCardapio()});$("cardapio").addEventListener("click",e=>{const btn=e.target.closest("[data-qtd]");if(!btn)return;alterarQtd(Number(btn.dataset.qtd),Number(btn.dataset.delta))});$("cardapio").addEventListener("input",e=>{const input=e.target.closest("[data-obs]");if(!input)return;const id=Number(input.dataset.obs),atual=carrinho.get(id)||{quantidade:0,observacao:""};carrinho.set(id,{...atual,observacao:input.value})});$("busca").addEventListener("input",renderCardapio);$("tipoPedido").addEventListener("change",ajustarTipo);$("btnEnviar").addEventListener("click",enviarPedido);
     if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("/service-worker.js").catch(console.error));ajustarTipo();aplicarMesaDaUrl();carregar();
   </script>
