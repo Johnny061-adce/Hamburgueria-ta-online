@@ -1,0 +1,42 @@
+[
+  {
+    "usuario": "admin",
+    "senha": "123",
+    "tipo": "painel"
+  },
+  {
+    "usuario": "Izabel",
+    "senha": "3040",
+    "tipo": "producao"
+  },
+  {
+    "usuario": "Johnny",
+    "senha": "9215",
+    "tipo": "painel"
+  },
+  {
+    "usuario": "Johnny S",
+    "senha": "9215",
+    "tipo": "garcom"
+  },
+  {
+    "usuario": "Julia V.",
+    "senha": "1420",
+    "tipo": "garcom"
+  },
+  {
+    "usuario": "Julia",
+    "senha": "1420",
+    "tipo": "painel"
+  },
+  {
+    "usuario": "Kelly",
+    "senha": "9512",
+    "tipo": "garcom"
+  },
+  {
+    "usuario": "ANTONIO",
+    "senha": "1012",
+    "tipo": "producao"
+  }
+]

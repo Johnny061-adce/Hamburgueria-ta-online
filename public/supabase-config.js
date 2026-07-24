@@ -1,0 +1,4 @@
+window.TA_CONFIG = {
+  SUPABASE_URL: "https://iqvqdazmxoydvfllfpwp.supabase.co",
+  SUPABASE_KEY: "sb_publishable_R-sG8jbpSpb9SSsPkfDDgA_5y3JcjZ2"
+};

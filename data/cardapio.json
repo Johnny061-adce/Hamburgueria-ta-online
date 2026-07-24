@@ -1,0 +1,770 @@
+[
+  {
+    "nome": "Hambúrgueres",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1,
+        "nome": "Burg. Especial",
+        "descricao": "Pão, hambúrguer, ovo, presunto, queijo, salada, milho e batata.",
+        "preco": 18,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 2,
+        "nome": "Burg. Bacon",
+        "descricao": "Pão, hambúrguer, bacon, ovo, presunto, queijo, salada, milho e batata.",
+        "preco": 20,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 4,
+        "nome": "Burg. Frango Especial",
+        "descricao": "Pão, frango, ovo, presunto, queijo, salada, milho e batata.",
+        "preco": 22,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 5,
+        "nome": "Burg. Frango Bacon Especial",
+        "descricao": "Pão, frango, bacon, ovo, presunto, queijo, salada, milho e batata.",
+        "preco": 24,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 6,
+        "nome": "Burg. Filé Especial",
+        "descricao": "Pão, filé, ovo, presunto, queijo, salada, milho e batata.",
+        "preco": 25,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 7,
+        "nome": "Burg. Filé Bacon",
+        "descricao": "Pão, filé, bacon, ovo, presunto, queijo, salada, milho e batata.",
+        "preco": 28,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 3,
+        "nome": "Burg. Tudo",
+        "descricao": "Pão, hambúrguer, salsicha, ovo, bacon, presunto, queijo, salada, milho e batata.",
+        "preco": 24,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Hambúrgueres Especiais",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 9,
+        "nome": "Burg Melry",
+        "descricao": "Pão, hambúrguer, calabresa, salsicha, bacon, ovo, presunto, queijo, salada, milho e batata.",
+        "preco": 34,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 10,
+        "nome": "Burg. Online",
+        "descricao": "Pão, hambúrguer, filé, frango, bacon, ovo, presunto, queijo, salada, milho e batata.",
+        "preco": 37,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 8,
+        "nome": "Burguer Kids",
+        "descricao": "Hambúrguer, presunto, queijo, tomate, alface + porção de batata frita.",
+        "preco": 17,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Batatas Fritas",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 12,
+        "nome": "Batata Média",
+        "descricao": "150g",
+        "preco": 20,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 11,
+        "nome": "Batata Grande",
+        "descricao": "300g",
+        "preco": 35,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Pastéis",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 16,
+        "nome": "PASTEL Carne",
+        "descricao": "",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 15,
+        "nome": "PASTEL Presunto c/ Queijo",
+        "descricao": "",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 14,
+        "nome": "PASTEL Carne com Queijo",
+        "descricao": "",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 30,
+        "nome": "PASTEL Misto",
+        "descricao": "CARNE,FRANGO,CATUPIRY,PRESUNTO E QUEIJO",
+        "preco": 20,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 13,
+        "nome": "PASTEL Frango c/ Catupiry",
+        "descricao": "",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Refrigerantes",
+    "coluna": "direita",
+    "itens": [
+      {
+        "id": 17,
+        "nome": "COCA-COLA LATA 350ml",
+        "descricao": "REFRIGERANTE LATA 350ml",
+        "preco": 6,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773281021102,
+        "nome": "GUARANÁ LATA 350ml",
+        "descricao": "REFRIGERANTE LATA 350ml",
+        "preco": 6,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773281185239,
+        "nome": "FANTA LARAMJA LATA 350ml",
+        "descricao": "REFRIGERANTE LATA 350ml",
+        "preco": 6,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 18,
+        "nome": "COCA-COLA 600ml",
+        "descricao": "REFRIGERANTE 600ml",
+        "preco": 8,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773281302463,
+        "nome": "GUARANÁ 600ml",
+        "descricao": "REFRIGERANTE 600ml",
+        "preco": 8,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773281349696,
+        "nome": "FANTA LARANJA 600ml",
+        "descricao": "REFRIGERANTE 600ml",
+        "preco": 8,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 19,
+        "nome": "COCA-COLA 2lt",
+        "descricao": "REFRIGERANTE 2LT",
+        "preco": 14,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773282413065,
+        "nome": "GUARANÁ 2LT",
+        "descricao": "REFRIGERANTE 2LT",
+        "preco": 14,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773282474043,
+        "nome": "FANTA LARANJA 2LT",
+        "descricao": "REFRIGERANTE 2LT",
+        "preco": 14,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 29,
+        "nome": "ÁGUA MINERAL 200ml",
+        "descricao": "Sem Gás",
+        "preco": 3,
+        "esgotado": true,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 20,
+        "nome": "COCA-COLA 1LT",
+        "descricao": "REFRIGERANTE 1LT",
+        "preco": 12,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773281488681,
+        "nome": "GUARANÁ 1LT",
+        "descricao": "REFRIGERANTE 1LT",
+        "preco": 12,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Sucos 500ml",
+    "coluna": "direita",
+    "itens": [
+      {
+        "id": 1773279691477,
+        "nome": "SUCO ACEROLA 500ml",
+        "descricao": "SUCO DE ACEROLA 500ml",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773279518142,
+        "nome": "SUCO CAJÁ 500ml",
+        "descricao": "SUCO DE CAJÁ 500ml",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773279582969,
+        "nome": "SUCO CUPUAÇU 500ml",
+        "descricao": "SUCO DE CUPUAÇU 500ml",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773279438434,
+        "nome": "SUCO GOIABA 500ml",
+        "descricao": "SUCO DE GOIABA 500ml",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 22,
+        "nome": "Suco de Laranja 500ml",
+        "descricao": "Suco natural de Laranja 500ml",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773280341371,
+        "nome": "SUCO MORANGO 500ml",
+        "descricao": "SUCO DE MORANGO 500ml",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 21,
+        "nome": "Suco Maracujá 500ml",
+        "descricao": "Suco de maracujá 500ml",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Cremes",
+    "coluna": "direita",
+    "itens": [
+      {
+        "id": 23,
+        "nome": "CREME Acerola 500ml",
+        "descricao": "CREME DE ACEROLA 500ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 25,
+        "nome": "CREME Cajá 500ml",
+        "descricao": "CREME DE CAJÁ 500ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 24,
+        "nome": "CREME Cupuaçu 500ml",
+        "descricao": "CREME DE CUPUAÇU 500ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 26,
+        "nome": "CREME Goiaba 500ml",
+        "descricao": "CREME DE GOIABA 500ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 28,
+        "nome": "CREME Maracujá 500ml",
+        "descricao": "CREME DE MARACUJÁ 500ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773280316334,
+        "nome": "CREME MORANGO 500ml",
+        "descricao": "CREME DE MORANGO 500ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Sucos 750ml",
+    "coluna": "direita",
+    "itens": [
+      {
+        "id": 1773280129846,
+        "nome": "SUCO ACEROLA 750ml",
+        "descricao": "SUCO DE ACEROLA 750ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773280211087,
+        "nome": "SUCO CAJÁ 750ml",
+        "descricao": "SUCO DE CAJÁ 750ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773280167530,
+        "nome": "SUCO CUPUAÇU 750ml",
+        "descricao": "SUCO DE CUPUAÇU 750ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773280252487,
+        "nome": "SUCO GOIABA 750ml",
+        "descricao": "SUCO DE GOIABA 750ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 31,
+        "nome": "SUCO Maracujá 750ml",
+        "descricao": "SUCO DE MARACUJÁ 750ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773280287893,
+        "nome": "SUCO MORANGO 750ml",
+        "descricao": "SUCO DE MORANGO 750ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773189921813,
+        "nome": "SUCO Laranja 750ml",
+        "descricao": "Suco de Laranja Jarra 750ml",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Adicional",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1773702312846,
+        "nome": "Adicional R$ 5,00",
+        "descricao": "",
+        "preco": 5,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1773442826738,
+        "nome": "Adicional R$ 7,00",
+        "descricao": "Adicional",
+        "preco": 7,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1774270233628,
+        "nome": "ADICIONAL R$ 3,00",
+        "descricao": "",
+        "preco": 3,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "ENTRADAS",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1775247494818,
+        "nome": "CEVICHE DE TILÁPIA",
+        "descricao": "CUBOS DE TILÁPIA MARINADOS COM LIMÃO SICILIANO, CEBOLA ROXA E PIMENTA DEDO DE MOÇA.",
+        "preco": 45,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775247750821,
+        "nome": "SALADA DA CASA",
+        "descricao": "FILÉ DE FRANGO GRELHADO, ALFACE, TOMATE CEREJA, MOLHO DE MOSTARDA, CROUTONS E QUEIJO.",
+        "preco": 35,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "MASSAS P/ 1 PESSOA",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1775248224849,
+        "nome": "PARMEGIANA COM FETTUCCINE ALFREDO (1 PESSOA)",
+        "descricao": "FILÉ PARMEGIANA, FETTUCCINE, MOLHO BRANCO, CREME DE LEITE E QUEIJO.",
+        "preco": 59,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775248053663,
+        "nome": "FILÉ CARBONARA     (1 PESSOA)",
+        "descricao": "FILE MINGNON GRELHADO, ESPAGUETE, MOLHO BRANCO, CREME DE LEITE, BACON, GEMA DE OVO E QUEIJO.",
+        "preco": 59,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775248523092,
+        "nome": "PARMEGIANA DE FILÉ C/ ARROZ BRANCO E BATATA(1 PESSOA)",
+        "descricao": "FILÉ PARMEGIANA, PRESUNTO, QUEIJO, MOLHO DE TOMATE GRATINADO, ARROZ BRANCO E BATATA FRITA.",
+        "preco": 59,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775248798610,
+        "nome": "LASSANHA BOLONHESA (1 PESSOA)",
+        "descricao": "MASSA DE LASSANHA, MOLHO BOLONHESA,COM CARNE SELECIONADA, MOLHO BRANCO, PRESUNTO E QUEIJO GRATINADO.",
+        "preco": 39,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775249026667,
+        "nome": "PANQUECA FRANGO C/ SALADA DA CASA (1 PESSOA)",
+        "descricao": "PANQUECA DE FRANGO COM MOHLO VERMELHO, MOLHO BRANCO E SALADA.",
+        "preco": 45,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775249589627,
+        "nome": "BITOCA (1 PESSOA)",
+        "descricao": "BIFE NO MOLHO MADEIRA, OVO FRITO, ARROZ BRANCO, BATATA FRITA E CEBOLA.",
+        "preco": 35,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775250146487,
+        "nome": "CAMARÃO POSITANO (1 PESSOA)",
+        "descricao": "CAMARÕES SALTEADOS NO AZEITE COM ESPAGUETE AO MOLHO POMODORO E ESPECIARIAS.",
+        "preco": 89,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775249394767,
+        "nome": "MASSA ONLINE (1 PESSOA)",
+        "descricao": "MACARRÃO PENNE, MOLHO VERMELHO, MOHLHO BRANCO, FILÉ MINGON,FRANGO,MILHO, AZEITONA,UVA PASSAS, PRESUNTO, QUEIJO, BACON.",
+        "preco": 39,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "SOBREMESSAS",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1775250326664,
+        "nome": "PUDIM",
+        "descricao": "PUDIM DE LEITE",
+        "preco": 12,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775250386159,
+        "nome": "ARROZ DOCE",
+        "descricao": "ARROZ DOCE CREMOSO COM LEITE NINHO.",
+        "preco": 10,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "MASSAS P/ 2 PESSOAS",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1775250598440,
+        "nome": "PARMEGIANA COM FETUTINO ALFRETO (2 PESSOAS)",
+        "descricao": "FILÉ PARMEGIANA, FETTUCCINE, MOLHO BRANCO, CREME DE LEITE E QUEIJO.",
+        "preco": 99,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775250680388,
+        "nome": "FILÉ CARBONARA (2 PESSOA)",
+        "descricao": "FILE MINGNON GRELHADO, ESPAGUETE, MOLHO BRANCO, CREME DE LEITE, BACON, GEMA DE OVO E QUEIJO.",
+        "preco": 99,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775250801817,
+        "nome": "MASSAS ONLINE (2 PESSOAS)",
+        "descricao": "MACARRÃO PENNE, MOLHO VERMELHO, MOHLHO BRANCO, CUBOS FILÉ MINGON, FRANGO,MILHO, AZEITONA,UVA PASSAS, PRESUNTO, QUEIJO, BACON.",
+        "preco": 60,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775250995094,
+        "nome": "CAMARÃO POSITANO (2 PESSOA)",
+        "descricao": "CAMARÕES SALTEADOS NO AZEITE COM ESPAGUETE AO MOLHO POMODORO E ESPECIARIAS.",
+        "preco": 60,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "PORÇÕES",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1775251193821,
+        "nome": "ARROZ BRANCO (ADICIONAL)",
+        "descricao": "PORÇÃO DE ARROZ",
+        "preco": 8,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "CALDOS",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1775858546730,
+        "nome": "Caldo de frango",
+        "descricao": "Caldo de frango, torrada, cheiro verde",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1775858689054,
+        "nome": "Caldo de carne",
+        "descricao": "Caldo de carne, torrada e cheiro verde",
+        "preco": 15,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Pastel. carne de sol c/ mussarela",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1781474367811,
+        "nome": "JOHNNY SARAIVA",
+        "descricao": "0",
+        "preco": 15,
+        "esgotado": true,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  },
+  {
+    "nome": "Pizzas",
+    "coluna": "esquerda",
+    "itens": [
+      {
+        "id": 1782254462347,
+        "nome": "Pizza M",
+        "descricao": "",
+        "preco": 30,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      },
+      {
+        "id": 1782254532159,
+        "nome": "Pizza G",
+        "descricao": "",
+        "preco": 60,
+        "esgotado": false,
+        "controlarEstoque": false,
+        "estoque": 0
+      }
+    ]
+  }
+]
