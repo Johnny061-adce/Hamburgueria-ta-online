@@ -1,9 +1,0 @@
-{
-  "name": "Tá Online Hamburgueria",
-  "short_name": "Tá Online",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#111827",
-  "theme_color": "#fb923c",
-  "icons": []
-}
