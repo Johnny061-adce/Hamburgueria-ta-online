@@ -1,1 +1,9 @@
-{"name":"Tá Online Hamburgueria","short_name":"Tá Online","description":"Cardápio e pedidos online","start_url":"/","scope":"/","display":"standalone","background_color":"#0b1120","theme_color":"#111827","orientation":"portrait-primary","icons":[]}
+{
+  "name": "Tá Online Hamburgueria",
+  "short_name": "Tá Online",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1120",
+  "theme_color": "#111827",
+  "icons": []
+}
